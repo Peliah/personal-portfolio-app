@@ -5,35 +5,36 @@ import { ContactForm, SocialMediaSection } from '@/components/contact';
 import { NeoBrutalismText } from '@/components/neo-brutalism';
 import { ThemeSelector } from '@/components/ThemeSelector';
 import { ThemeToggleButton } from '@/components/ThemeToggleButton';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 export default function ContactScreen() {
 
     return (
+        <SafeAreaView style={styles.container}>
+            <ScrollView style={styles.container}>
+                <View style={styles.header}>
+                    <NeoBrutalismText variant="heading" uppercase>
+                        Get In Touch
+                    </NeoBrutalismText>
+                    <NeoBrutalismText variant="subheading" color="secondary">
+                        Let&apos;s collaborate and build something amazing together
+                    </NeoBrutalismText>
 
-        <ScrollView style={styles.container}>
-            <View style={styles.header}>
-                <NeoBrutalismText variant="heading" uppercase>
-                    Get In Touch
-                </NeoBrutalismText>
-                <NeoBrutalismText variant="subheading" color="secondary">
-                    Let&apos;s collaborate and build something amazing together
-                </NeoBrutalismText>
-
-                <View style={styles.themeControls}>
-                    <ThemeToggleButton />
-                    <ThemeSelector />
+                    <View style={styles.themeControls}>
+                        <ThemeToggleButton />
+                        <ThemeSelector />
+                    </View>
                 </View>
-            </View>
 
-            <SocialMediaSection />
-            <ContactForm />
+                <SocialMediaSection />
+                <ContactForm />
 
-            <View style={styles.footer}>
-                <NeoBrutalismText variant="caption" color="muted" style={styles.footerText}>
-                    Let&apos;s create something extraordinary together!
-                </NeoBrutalismText>
-            </View>
-        </ScrollView>
+                <View style={styles.footer}>
+                    <NeoBrutalismText variant="caption" color="muted" style={styles.footerText}>
+                        Let&apos;s create something extraordinary together!
+                    </NeoBrutalismText>
+                </View>
+            </ScrollView>
+        </SafeAreaView>
     );
 }
 

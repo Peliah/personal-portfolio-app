@@ -8,16 +8,19 @@ import {
   ProfileHeader,
   QuoteSection
 } from '@/components/home-screen';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   return (
-    <ScrollView style={styles.container}>
-      <ProfileHeader />
-      <IntroSection />
-      <BentoGrid />
-      <QuoteSection />
-      <FooterSection />
-    </ScrollView>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.container}>
+        <ProfileHeader />
+        <IntroSection />
+        <BentoGrid />
+        <QuoteSection />
+        <FooterSection />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
