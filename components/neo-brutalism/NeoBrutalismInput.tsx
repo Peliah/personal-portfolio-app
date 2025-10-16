@@ -48,7 +48,7 @@ export function NeoBrutalismInput({
     const backgroundPrimary = useNeoBrutalismColor({}, 'background.primary');
     const backgroundSecondary = useNeoBrutalismColor({}, 'background.secondary');
     const primaryBlack = useNeoBrutalismColor({}, 'primary.black');
-    const accentYellow = useNeoBrutalismColor({}, 'accent.neonYellow');
+    const accentGreen = useNeoBrutalismColor({}, 'accent.neonGreen');
     const borderPrimary = useNeoBrutalismColor({}, 'border.primary');
     const borderSecondary = useNeoBrutalismColor({}, 'border.secondary');
     const borderAccent = useNeoBrutalismColor({}, 'border.accent');
@@ -68,7 +68,7 @@ export function NeoBrutalismInput({
                 };
             case 'accent':
                 return {
-                    backgroundColor: accentYellow,
+                    backgroundColor: accentGreen,
                     borderColor: isFocused ? borderPrimary : borderPrimary,
                     textColor: textPrimary,
                     placeholderColor: textSecondary,

@@ -21,7 +21,7 @@ export function NeoBrutalismDemo() {
     const primaryRed = useNeoBrutalismColor({}, 'primary.red');
     const primaryBlue = useNeoBrutalismColor({}, 'primary.blue');
     const primaryGreen = useNeoBrutalismColor({}, 'primary.green');
-    const accentYellow = useNeoBrutalismColor({}, 'accent.neonYellow');
+    const accentGreen = useNeoBrutalismColor({}, 'accent.neonGreen');
     const accentPink = useNeoBrutalismColor({}, 'accent.neonPink');
 
     return (
@@ -209,8 +209,8 @@ export function NeoBrutalismDemo() {
                     <View style={[styles.colorSwatch, { backgroundColor: primaryGreen }]}>
                         <NeoBrutalismText variant="caption" color="primary">Green</NeoBrutalismText>
                     </View>
-                    <View style={[styles.colorSwatch, { backgroundColor: accentYellow }]}>
-                        <NeoBrutalismText variant="caption" color="primary">Yellow</NeoBrutalismText>
+                    <View style={[styles.colorSwatch, { backgroundColor: accentGreen }]}>
+                        <NeoBrutalismText variant="caption" color="primary">Accent Green</NeoBrutalismText>
                     </View>
                     <View style={[styles.colorSwatch, { backgroundColor: accentPink }]}>
                         <NeoBrutalismText variant="caption" color="inverse">Pink</NeoBrutalismText>

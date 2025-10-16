@@ -33,9 +33,9 @@ export const NeoBrutalismColors = {
             neonPink: '#e91e63',
             neonGreen: '#4caf50',
             neonBlue: '#2196f3',
-            neonYellow: '#ffeb3b',
             neonOrange: '#ff9800',
             neonPurple: '#9c27b0',
+            neonCyan: '#00bcd4',
         },
 
         // Background Colors for light theme
@@ -100,9 +100,9 @@ export const NeoBrutalismColors = {
             neonPink: '#e91e63',
             neonGreen: '#4caf50',
             neonBlue: '#03a9f4',
-            neonYellow: '#ffeb3b',
             neonOrange: '#ff9800',
             neonPurple: '#9c27b0',
+            neonCyan: '#00bcd4',
         },
 
         // Background Colors for dark theme

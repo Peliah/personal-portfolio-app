@@ -31,7 +31,7 @@ export function NeoBrutalismCard({
     const backgroundPrimary = useNeoBrutalismColor({}, 'background.primary');
     const backgroundSecondary = useNeoBrutalismColor({}, 'background.secondary');
     const primaryBlack = useNeoBrutalismColor({}, 'primary.black');
-    const accentYellow = useNeoBrutalismColor({}, 'accent.neonYellow');
+    const accentGreen = useNeoBrutalismColor({}, 'accent.neonGreen');
     const borderPrimary = useNeoBrutalismColor({}, 'border.primary');
     const borderSecondary = useNeoBrutalismColor({}, 'border.secondary');
 
@@ -44,7 +44,7 @@ export function NeoBrutalismCard({
                 };
             case 'accent':
                 return {
-                    backgroundColor: accentYellow,
+                    backgroundColor: accentGreen,
                     borderColor: borderPrimary,
                 };
             case 'dark':
