@@ -36,7 +36,7 @@ export function BentoGrid() {
                     What They Say About Me
                 </NeoBrutalismText>
                 <NeoBrutalismText variant="body" color="primary" style={styles.bentoText}>
-                    &ldquo;Peliah brings creativity and technical excellence to every project. A true professional!&rdquo;
+                    &ldquo;Dushane brings creativity and technical excellence to every project. A true professional!&rdquo;
                 </NeoBrutalismText>
                 <NeoBrutalismText variant="caption" color="primary" style={styles.bentoSubtext}>
                     — Client Testimonial

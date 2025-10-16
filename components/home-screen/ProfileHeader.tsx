@@ -17,7 +17,7 @@ export function ProfileHeader() {
             <View style={styles.nameContainer}>
                 <View style={styles.nameSection}>
                     <NeoBrutalismText variant="heading" uppercase style={styles.name}>
-                        Peliah
+                        Dushane
                     </NeoBrutalismText>
                     <View style={styles.statusDot} />
                 </View>

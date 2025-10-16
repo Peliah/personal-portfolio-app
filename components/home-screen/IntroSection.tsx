@@ -7,7 +7,7 @@ export function IntroSection() {
     return (
         <NeoBrutalismCard variant="default" style={styles.introCard}>
             <NeoBrutalismText variant="body" style={styles.introText}>
-                Hi hi!! I&apos;m Peliah. By day I&apos;m a Software Developer, by nature I&apos;m a creative soul.
+                Hi hi!! I&apos;m Dushane. By day I&apos;m a Software Developer, by nature I&apos;m a creative soul.
                 Welcome to my little corner of your phone.
             </NeoBrutalismText>
         </NeoBrutalismCard>

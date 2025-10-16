@@ -7,7 +7,7 @@ export function FooterSection() {
   return (
     <View style={styles.footer}>
       <NeoBrutalismText variant="caption" color="muted" style={styles.footerText}>
-        Built with React Native by &copy;Peliah
+        Built with React Native by &copy;Dushane
       </NeoBrutalismText>
     </View>
   );
