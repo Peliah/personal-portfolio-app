@@ -1,29 +1,31 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, View } from 'react-native';
 
 import {
   NeoBrutalismButton,
   NeoBrutalismCard,
   NeoBrutalismText
 } from '@/components/neo-brutalism';
-import { ThemeSelector } from '@/components/ThemeSelector';
 import { ThemeToggleButton } from '@/components/ThemeToggleButton';
 
 export default function HomeScreen() {
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <NeoBrutalismText variant="heading" uppercase>
-          Welcome
-        </NeoBrutalismText>
-        <NeoBrutalismText variant="subheading" color="secondary">
-          I&apos;m a passionate developer creating amazing mobile experiences
-        </NeoBrutalismText>
+      <View style={styles.imageContainer}>
+        <Image
+          source={{ uri: 'https://via.placeholder.com/200x200/4CAF50/FFFFFF?text=P' }}
+          style={styles.profileImage}
+        />
+      </View>
 
-        <View style={styles.themeControls}>
-          <ThemeToggleButton />
-          <ThemeSelector />
+      <View style={styles.nameContainer}>
+        <View style={styles.nameSection}>
+          <NeoBrutalismText variant="heading" uppercase style={styles.name}>
+            Peliah
+          </NeoBrutalismText>
+          <View style={styles.statusDot} />
         </View>
+        <ThemeToggleButton />
       </View>
 
       {/* About Section */}
@@ -137,15 +139,43 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
   },
-  header: {
-    marginBottom: 24,
+  imageContainer: {
     alignItems: 'center',
+    marginBottom: 24,
   },
-  themeControls: {
+  profileImage: {
+    width: '100%',
+    height: 200,
+    borderRadius: 8,
+    borderWidth: 3,
+    borderColor: '#424242',
+  },
+  nameContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 32,
+    paddingHorizontal: 8,
+  },
+  nameSection: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
-    marginTop: 16,
+  },
+  name: {
+    fontSize: 32,
+    fontWeight: 'bold',
+  },
+  statusDot: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    backgroundColor: '#4CAF50',
+    shadowColor: '#4CAF50',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.8,
+    shadowRadius: 8,
+    elevation: 8,
   },
   sectionCard: {
     marginBottom: 20,
@@ -175,16 +205,6 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     backgroundColor: 'rgba(0, 0, 0, 0.1)',
     borderRadius: 4,
-  },
-  headerPlaceholder: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headerText: {
-    fontSize: 48,
-    fontWeight: 'bold',
-    opacity: 0.8,
   },
   footer: {
     alignItems: 'center',
