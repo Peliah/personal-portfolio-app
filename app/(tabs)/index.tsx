@@ -1,109 +1,198 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet, View } from 'react-native';
+import React from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
+import {
+  NeoBrutalismButton,
+  NeoBrutalismCard,
+  NeoBrutalismText
+} from '@/components/neo-brutalism';
+import { ThemeSelector } from '@/components/ThemeSelector';
 import { ThemeToggleButton } from '@/components/ThemeToggleButton';
-import { Link } from 'expo-router';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+    <ScrollView style={styles.container}>
+      <View style={styles.header}>
+        <NeoBrutalismText variant="heading" uppercase>
+          Welcome
+        </NeoBrutalismText>
+        <NeoBrutalismText variant="subheading" color="secondary">
+          I&apos;m a passionate developer creating amazing mobile experiences
+        </NeoBrutalismText>
+
         <View style={styles.themeControls}>
           <ThemeToggleButton />
+          <ThemeSelector />
         </View>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+      </View>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      {/* About Section */}
+      <NeoBrutalismCard variant="default" style={styles.sectionCard}>
+        <NeoBrutalismText variant="subheading" uppercase style={styles.sectionTitle}>
+          About Me
+        </NeoBrutalismText>
+        <NeoBrutalismText variant="body" style={styles.sectionText}>
+          I&apos;m a full-stack developer with expertise in React Native, mobile app development,
+          and modern web technologies. I love creating user-friendly applications that
+          solve real-world problems.
+        </NeoBrutalismText>
+        <View style={styles.sectionActions}>
+          <NeoBrutalismButton
+            title="View Projects"
+            variant="primary"
+            size="base"
+            onPress={() => console.log('View projects')}
+          />
+          <NeoBrutalismButton
+            title="Get In Touch"
+            variant="accent"
+            size="base"
+            onPress={() => console.log('Contact')}
+          />
+        </View>
+      </NeoBrutalismCard>
+
+      {/* Skills Section */}
+      <NeoBrutalismCard variant="accent" style={styles.sectionCard}>
+        <NeoBrutalismText variant="subheading" uppercase style={styles.sectionTitle}>
+          Skills
+        </NeoBrutalismText>
+        <View style={styles.skillsGrid}>
+          <View style={styles.skillItem}>
+            <NeoBrutalismText variant="body" color="primary">React Native</NeoBrutalismText>
+          </View>
+          <View style={styles.skillItem}>
+            <NeoBrutalismText variant="body" color="primary">TypeScript</NeoBrutalismText>
+          </View>
+          <View style={styles.skillItem}>
+            <NeoBrutalismText variant="body" color="primary">Node.js</NeoBrutalismText>
+          </View>
+          <View style={styles.skillItem}>
+            <NeoBrutalismText variant="body" color="primary">Expo</NeoBrutalismText>
+          </View>
+          <View style={styles.skillItem}>
+            <NeoBrutalismText variant="body" color="primary">UI/UX Design</NeoBrutalismText>
+          </View>
+          <View style={styles.skillItem}>
+            <NeoBrutalismText variant="body" color="primary">Mobile Development</NeoBrutalismText>
+          </View>
+        </View>
+      </NeoBrutalismCard>
+
+      {/* Experience Section */}
+      <NeoBrutalismCard variant="dark" style={styles.sectionCard}>
+        <NeoBrutalismText variant="subheading" color="inverse" uppercase style={styles.sectionTitle}>
+          Experience
+        </NeoBrutalismText>
+        <NeoBrutalismText variant="body" color="inverse" style={styles.sectionText}>
+          With over 3 years of experience in mobile development, I&apos;ve worked on various
+          projects ranging from startup MVPs to enterprise applications. I specialize
+          in creating scalable, maintainable code.
+        </NeoBrutalismText>
+        <View style={styles.sectionActions}>
+          <NeoBrutalismButton
+            title="Download CV"
+            variant="primary"
+            size="base"
+            onPress={() => console.log('Download CV')}
+          />
+          <NeoBrutalismButton
+            title="LinkedIn"
+            variant="success"
+            size="base"
+            onPress={() => console.log('LinkedIn')}
+          />
+        </View>
+      </NeoBrutalismCard>
+
+      {/* Call to Action */}
+      <NeoBrutalismCard variant="light" style={styles.ctaCard}>
+        <NeoBrutalismText variant="subheading" uppercase style={styles.sectionTitle}>
+          Ready to Work Together?
+        </NeoBrutalismText>
+        <NeoBrutalismText variant="body" style={styles.sectionText}>
+          Let&apos;s discuss your next project and bring your ideas to life with cutting-edge
+          mobile technology and beautiful design.
+        </NeoBrutalismText>
+        <NeoBrutalismButton
+          title="Start a Project"
+          variant="danger"
+          size="lg"
+          fullWidth
+          onPress={() => console.log('Start project')}
+        />
+      </NeoBrutalismCard>
+
+      <View style={styles.footer}>
+        <NeoBrutalismText variant="caption" color="muted" style={styles.footerText}>
+          Built with React Native & Neo-Brutalism Design
+        </NeoBrutalismText>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  container: {
+    flex: 1,
+    padding: 16,
+  },
+  header: {
+    marginBottom: 24,
     alignItems: 'center',
-    gap: 8,
-    flexWrap: 'wrap',
   },
   themeControls: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
-    marginTop: 8,
+    marginTop: 16,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  sectionCard: {
+    marginBottom: 20,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  ctaCard: {
+    marginBottom: 20,
+  },
+  sectionTitle: {
+    marginBottom: 16,
+  },
+  sectionText: {
+    marginBottom: 20,
+    lineHeight: 24,
+  },
+  sectionActions: {
+    flexDirection: 'row',
+    gap: 12,
+    flexWrap: 'wrap',
+  },
+  skillsGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 12,
+  },
+  skillItem: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    borderRadius: 4,
+  },
+  headerPlaceholder: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerText: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    opacity: 0.8,
+  },
+  footer: {
+    alignItems: 'center',
+    marginTop: 20,
+    marginBottom: 40,
+  },
+  footerText: {
+    fontStyle: 'italic',
+    textAlign: 'center',
   },
 });
