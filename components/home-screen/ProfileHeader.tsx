@@ -9,7 +9,7 @@ export function ProfileHeader() {
         <>
             <View style={styles.imageContainer}>
                 <Image
-                    source={{ uri: 'https://via.placeholder.com/200x200/4CAF50/FFFFFF?text=P' }}
+                    source={require('@/assets/imgs/profile-pic.jpeg') || { uri: 'https://via.placeholder.com/200x200/4CAF50/FFFFFF?text=P' }}
                     style={styles.profileImage}
                 />
             </View>
