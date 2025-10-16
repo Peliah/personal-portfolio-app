@@ -21,6 +21,7 @@ export function ThemeSelector({ style }: ThemeSelectorProps) {
         { mode: 'light', label: 'Light', icon: 'sunny' },
         { mode: 'dark', label: 'Dark', icon: 'moon' },
         { mode: 'system', label: 'System', icon: 'phone-portrait' },
+        { mode: 'neo-brutalism', label: 'Neo-Brutalism', icon: 'construct' },
     ];
 
     const handleThemeSelect = (mode: ThemeMode) => {
@@ -30,6 +31,7 @@ export function ThemeSelector({ style }: ThemeSelectorProps) {
 
     const getCurrentThemeIcon = () => {
         if (themeMode === 'system') return 'phone-portrait';
+        if (themeMode === 'neo-brutalism') return 'construct';
         return isDark ? 'moon' : 'sunny';
     };
 

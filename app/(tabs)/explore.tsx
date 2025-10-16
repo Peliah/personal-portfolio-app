@@ -2,6 +2,7 @@ import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
 
 import { ExternalLink } from '@/components/external-link';
+import { NeoBrutalismDemo } from '@/components/NeoBrutalismDemo';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -38,6 +39,13 @@ export default function TabTwoScreen() {
           Try the theme controls below to see the system in action!
         </ThemedText>
         <ThemeDemo />
+      </Collapsible>
+      <Collapsible title="Neo-Brutalism UI Demo">
+        <ThemedText>
+          Experience the bold, raw aesthetic of Neo-Brutalism design! Switch to Neo-Brutalism theme
+          in the theme selector above to see the full effect.
+        </ThemedText>
+        <NeoBrutalismDemo />
       </Collapsible>
       <Collapsible title="File-based routing">
         <ThemedText>
