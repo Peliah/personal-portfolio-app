@@ -2,7 +2,6 @@ import React from 'react';
 import { Image, ScrollView, StyleSheet, View } from 'react-native';
 
 import {
-  NeoBrutalismButton,
   NeoBrutalismCard,
   NeoBrutalismText
 } from '@/components/neo-brutalism';
@@ -28,106 +27,28 @@ export default function HomeScreen() {
         <ThemeToggleButton />
       </View>
 
-      {/* About Section */}
-      <NeoBrutalismCard variant="default" style={styles.sectionCard}>
-        <NeoBrutalismText variant="subheading" uppercase style={styles.sectionTitle}>
-          About Me
+      {/* Intro Section */}
+      <NeoBrutalismCard variant="default" style={styles.introCard}>
+        <NeoBrutalismText variant="body" style={styles.introText}>
+          Hi hi!! I&apos;m Peliah. By day I&apos;m a Software Developer, by nature I&apos;m a creative soul.
+          Welcome to my little corner of your phone.
         </NeoBrutalismText>
-        <NeoBrutalismText variant="body" style={styles.sectionText}>
-          I&apos;m a full-stack developer with expertise in React Native, mobile app development,
-          and modern web technologies. I love creating user-friendly applications that
-          solve real-world problems.
-        </NeoBrutalismText>
-        <View style={styles.sectionActions}>
-          <NeoBrutalismButton
-            title="View Projects"
-            variant="primary"
-            size="base"
-            onPress={() => console.log('View projects')}
-          />
-          <NeoBrutalismButton
-            title="Get In Touch"
-            variant="accent"
-            size="base"
-            onPress={() => console.log('Contact')}
-          />
-        </View>
       </NeoBrutalismCard>
 
-      {/* Skills Section */}
-      <NeoBrutalismCard variant="accent" style={styles.sectionCard}>
-        <NeoBrutalismText variant="subheading" uppercase style={styles.sectionTitle}>
-          Skills
+      {/* Quote Section */}
+      <NeoBrutalismCard variant="dark" style={styles.quoteCard}>
+        <NeoBrutalismText variant="body" color="inverse" style={styles.quoteText}>
+          &ldquo;Act as if it were impossible to fail, For in the realm of endless possibilities lies the path to greatness.&rdquo;
         </NeoBrutalismText>
-        <View style={styles.skillsGrid}>
-          <View style={styles.skillItem}>
-            <NeoBrutalismText variant="body" color="primary">React Native</NeoBrutalismText>
-          </View>
-          <View style={styles.skillItem}>
-            <NeoBrutalismText variant="body" color="primary">TypeScript</NeoBrutalismText>
-          </View>
-          <View style={styles.skillItem}>
-            <NeoBrutalismText variant="body" color="primary">Node.js</NeoBrutalismText>
-          </View>
-          <View style={styles.skillItem}>
-            <NeoBrutalismText variant="body" color="primary">Expo</NeoBrutalismText>
-          </View>
-          <View style={styles.skillItem}>
-            <NeoBrutalismText variant="body" color="primary">UI/UX Design</NeoBrutalismText>
-          </View>
-          <View style={styles.skillItem}>
-            <NeoBrutalismText variant="body" color="primary">Mobile Development</NeoBrutalismText>
-          </View>
-        </View>
+        <NeoBrutalismText variant="caption" color="inverse" style={styles.quoteAuthor}>
+          — Unknown
+        </NeoBrutalismText>
       </NeoBrutalismCard>
 
-      {/* Experience Section */}
-      <NeoBrutalismCard variant="dark" style={styles.sectionCard}>
-        <NeoBrutalismText variant="subheading" color="inverse" uppercase style={styles.sectionTitle}>
-          Experience
-        </NeoBrutalismText>
-        <NeoBrutalismText variant="body" color="inverse" style={styles.sectionText}>
-          With over 3 years of experience in mobile development, I&apos;ve worked on various
-          projects ranging from startup MVPs to enterprise applications. I specialize
-          in creating scalable, maintainable code.
-        </NeoBrutalismText>
-        <View style={styles.sectionActions}>
-          <NeoBrutalismButton
-            title="Download CV"
-            variant="primary"
-            size="base"
-            onPress={() => console.log('Download CV')}
-          />
-          <NeoBrutalismButton
-            title="LinkedIn"
-            variant="success"
-            size="base"
-            onPress={() => console.log('LinkedIn')}
-          />
-        </View>
-      </NeoBrutalismCard>
-
-      {/* Call to Action */}
-      <NeoBrutalismCard variant="light" style={styles.ctaCard}>
-        <NeoBrutalismText variant="subheading" uppercase style={styles.sectionTitle}>
-          Ready to Work Together?
-        </NeoBrutalismText>
-        <NeoBrutalismText variant="body" style={styles.sectionText}>
-          Let&apos;s discuss your next project and bring your ideas to life with cutting-edge
-          mobile technology and beautiful design.
-        </NeoBrutalismText>
-        <NeoBrutalismButton
-          title="Start a Project"
-          variant="danger"
-          size="lg"
-          fullWidth
-          onPress={() => console.log('Start project')}
-        />
-      </NeoBrutalismCard>
 
       <View style={styles.footer}>
         <NeoBrutalismText variant="caption" color="muted" style={styles.footerText}>
-          Built with React Native & Neo-Brutalism Design
+          Built with React Native by &copy;Peliah
         </NeoBrutalismText>
       </View>
     </ScrollView>
@@ -145,7 +66,7 @@ const styles = StyleSheet.create({
   },
   profileImage: {
     width: '100%',
-    height: 200,
+    height: 400,
     borderRadius: 8,
     borderWidth: 3,
     borderColor: '#424242',
@@ -176,6 +97,31 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 8,
     elevation: 8,
+  },
+  introCard: {
+    marginBottom: 24,
+    padding: 20,
+  },
+  introText: {
+    fontSize: 16,
+    lineHeight: 24,
+    textAlign: 'justify',
+  },
+  quoteCard: {
+    marginBottom: 24,
+    padding: 20,
+  },
+  quoteText: {
+    fontSize: 18,
+    lineHeight: 28,
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginBottom: 12,
+  },
+  quoteAuthor: {
+    textAlign: 'right',
+    fontStyle: 'italic',
+    opacity: 0.8,
   },
   sectionCard: {
     marginBottom: 20,
