@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "personal-portfolio-app",
-    "slug": "personal-portfolio-app",
+    "slug": "personal-portfolio",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -43,6 +43,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "70f0845d-0cba-46cc-abe7-2b8449f56512"
+      }
+    },
+    "owner": "peliah"
   }
 }
