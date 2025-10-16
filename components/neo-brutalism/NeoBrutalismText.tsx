@@ -1,7 +1,7 @@
 import {
-    NeoBrutalismColors,
     NeoBrutalismTypography
 } from '@/constants/neo-brutalism';
+import { useNeoBrutalismColor } from '@/hooks/use-neo-brutalism-color';
 import React from 'react';
 import { StyleSheet, Text, TextStyle } from 'react-native';
 
@@ -27,6 +27,30 @@ export function NeoBrutalismText({
     uppercase = false,
     style,
 }: NeoBrutalismTextProps) {
+    // Get colors at component level
+    const textPrimary = useNeoBrutalismColor({}, 'text.primary');
+    const textSecondary = useNeoBrutalismColor({}, 'text.secondary');
+    const textInverse = useNeoBrutalismColor({}, 'text.inverse');
+    const textAccent = useNeoBrutalismColor({}, 'text.accent');
+    const textMuted = useNeoBrutalismColor({}, 'text.muted');
+
+    const getColorValue = (colorType: string) => {
+        switch (colorType) {
+            case 'primary':
+                return textPrimary;
+            case 'secondary':
+                return textSecondary;
+            case 'inverse':
+                return textInverse;
+            case 'accent':
+                return textAccent;
+            case 'muted':
+                return textMuted;
+            default:
+                return textPrimary;
+        }
+    };
+
     const getVariantStyles = () => {
         switch (variant) {
             case 'heading':
@@ -77,23 +101,6 @@ export function NeoBrutalismText({
                     textTransform: uppercase ? 'uppercase' : 'none',
                     letterSpacing: 0.5,
                 };
-        }
-    };
-
-    const getColorValue = (colorType: string) => {
-        switch (colorType) {
-            case 'primary':
-                return NeoBrutalismColors.text.primary;
-            case 'secondary':
-                return NeoBrutalismColors.text.secondary;
-            case 'inverse':
-                return NeoBrutalismColors.text.inverse;
-            case 'accent':
-                return NeoBrutalismColors.text.accent;
-            case 'muted':
-                return NeoBrutalismColors.text.muted;
-            default:
-                return NeoBrutalismColors.text.primary;
         }
     };
 

@@ -5,69 +5,138 @@
  */
 
 export const NeoBrutalismColors = {
-    // Primary Colors - Bold but eye-friendly
-    primary: {
-        black: '#1a1a1a',
-        white: '#FFFFFF',
-        red: '#d32f2f',
-        yellow: '#f9a825',
-        blue: '#1976d2',
-        green: '#388e3c',
-        purple: '#7b1fa2',
-        orange: '#f57c00',
+    light: {
+        // Primary Colors - Bold but eye-friendly for light theme
+        primary: {
+            black: '#1a1a1a',
+            white: '#FFFFFF',
+            red: '#d32f2f',
+            yellow: '#f9a825',
+            blue: '#1976d2',
+            green: '#388e3c',
+            purple: '#7b1fa2',
+            orange: '#f57c00',
+        },
+
+        // Secondary Colors - Muted and comfortable for light theme
+        secondary: {
+            darkGray: '#424242',
+            lightGray: '#e0e0e0',
+            darkRed: '#b71c1c',
+            darkBlue: '#0d47a1',
+            darkGreen: '#1b5e20',
+            darkYellow: '#f57f17',
+        },
+
+        // Accent Colors - Eye-friendly but still bold for light theme
+        accent: {
+            neonPink: '#e91e63',
+            neonGreen: '#4caf50',
+            neonBlue: '#2196f3',
+            neonYellow: '#ffeb3b',
+            neonOrange: '#ff9800',
+            neonPurple: '#9c27b0',
+        },
+
+        // Background Colors for light theme
+        background: {
+            primary: '#FFFFFF',
+            secondary: '#f8f9fa',
+            dark: '#1a1a1a',
+            light: '#FFFFFF',
+            accent: '#fff3e0',
+        },
+
+        // Text Colors for light theme
+        text: {
+            primary: '#1a1a1a',
+            secondary: '#424242',
+            inverse: '#FFFFFF',
+            accent: '#d32f2f',
+            muted: '#757575',
+        },
+
+        // Border Colors for light theme
+        border: {
+            primary: '#424242',
+            secondary: '#757575',
+            accent: '#d32f2f',
+            thick: '#424242',
+        },
+
+        // Shadow Colors for light theme
+        shadow: {
+            black: '#424242',
+            dark: '#757575',
+            accent: '#d32f2f',
+        }
     },
 
-    // Secondary Colors - Muted and comfortable
-    secondary: {
-        darkGray: '#424242',
-        lightGray: '#e0e0e0',
-        darkRed: '#b71c1c',
-        darkBlue: '#0d47a1',
-        darkGreen: '#1b5e20',
-        darkYellow: '#f57f17',
-    },
+    dark: {
+        // Primary Colors - Bold but eye-friendly for dark theme
+        primary: {
+            black: '#000000',
+            white: '#f5f5f5',
+            red: '#f44336',
+            yellow: '#ffc107',
+            blue: '#2196f3',
+            green: '#4caf50',
+            purple: '#9c27b0',
+            orange: '#ff9800',
+        },
 
-    // Accent Colors - Eye-friendly but still bold
-    accent: {
-        neonPink: '#e91e63',
-        neonGreen: '#4caf50',
-        neonBlue: '#2196f3',
-        neonYellow: '#ffeb3b',
-        neonOrange: '#ff9800',
-        neonPurple: '#9c27b0',
-    },
+        // Secondary Colors - Muted and comfortable for dark theme
+        secondary: {
+            darkGray: '#616161',
+            lightGray: '#424242',
+            darkRed: '#d32f2f',
+            darkBlue: '#1976d2',
+            darkGreen: '#388e3c',
+            darkYellow: '#f9a825',
+        },
 
-    // Background Colors
-    background: {
-        primary: '#FFFFFF',
-        secondary: '#f8f9fa',
-        dark: '#1a1a1a',
-        light: '#FFFFFF',
-        accent: '#fff3e0',
-    },
+        // Accent Colors - Eye-friendly but still bold for dark theme
+        accent: {
+            neonPink: '#e91e63',
+            neonGreen: '#4caf50',
+            neonBlue: '#03a9f4',
+            neonYellow: '#ffeb3b',
+            neonOrange: '#ff9800',
+            neonPurple: '#9c27b0',
+        },
 
-    // Text Colors
-    text: {
-        primary: '#1a1a1a',
-        secondary: '#424242',
-        inverse: '#FFFFFF',
-        accent: '#d32f2f',
-        muted: '#757575',
-    },
+        // Background Colors for dark theme
+        background: {
+            primary: '#121212',
+            secondary: '#1e1e1e',
+            dark: '#000000',
+            light: '#f5f5f5',
+            accent: '#2d1b00',
+        },
 
-    // Border Colors
-    border: {
-        primary: '#424242',
-        secondary: '#757575',
-        accent: '#d32f2f',
-        thick: '#424242', // For thick borders
-    },
+        // Text Colors for dark theme
+        text: {
+            primary: '#f5f5f5',
+            secondary: '#b0b0b0',
+            inverse: '#ffffff',
+            accent: '#f44336',
+            muted: '#757575',
+        },
 
-    // Shadow Colors (solid, unblurred)
-    shadow: {
-        black: '#424242',
-        dark: '#757575',
-        accent: '#d32f2f',
+        // Border Colors for dark theme
+        border: {
+            primary: '#616161',
+            secondary: '#424242',
+            accent: '#f44336',
+            thick: '#616161',
+        },
+
+        // Shadow Colors for dark theme
+        shadow: {
+            black: '#000000',
+            dark: '#424242',
+            accent: '#f44336',
+        }
     }
 };
 
@@ -163,28 +232,28 @@ export const NeoBrutalismShadows = {
         elevation: 0,
     },
     sm: {
-        shadowColor: NeoBrutalismColors.shadow.black,
+        shadowColor: '#424242',
         shadowOffset: { width: 2, height: 2 },
         shadowOpacity: 1,
         shadowRadius: 0,
         elevation: 2,
     },
     base: {
-        shadowColor: NeoBrutalismColors.shadow.black,
+        shadowColor: '#424242',
         shadowOffset: { width: 4, height: 4 },
         shadowOpacity: 1,
         shadowRadius: 0,
         elevation: 4,
     },
     lg: {
-        shadowColor: NeoBrutalismColors.shadow.black,
+        shadowColor: '#424242',
         shadowOffset: { width: 6, height: 6 },
         shadowOpacity: 1,
         shadowRadius: 0,
         elevation: 6,
     },
     xl: {
-        shadowColor: NeoBrutalismColors.shadow.black,
+        shadowColor: '#424242',
         shadowOffset: { width: 8, height: 8 },
         shadowOpacity: 1,
         shadowRadius: 0,

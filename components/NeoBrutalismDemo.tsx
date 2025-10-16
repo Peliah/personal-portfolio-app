@@ -4,19 +4,25 @@ import {
     NeoBrutalismInput,
     NeoBrutalismText
 } from '@/components/neo-brutalism';
-import { NeoBrutalismColors, NeoBrutalismSpacing } from '@/constants/neo-brutalism';
+import { NeoBrutalismSpacing } from '@/constants/neo-brutalism';
 import { useTheme } from '@/contexts/ThemeContext';
+import { useNeoBrutalismColor } from '@/hooks/use-neo-brutalism-color';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
 export function NeoBrutalismDemo() {
-    const { themeMode, isNeoBrutalism } = useTheme();
+    const { themeMode, isDark } = useTheme();
     const [inputValue, setInputValue] = useState('');
     const [multilineValue, setMultilineValue] = useState('');
 
-    const backgroundColor = isNeoBrutalism
-        ? NeoBrutalismColors.background.primary
-        : '#FFFFFF';
+    // Get colors at component level
+    const backgroundColor = useNeoBrutalismColor({}, 'background.primary');
+    const primaryBlack = useNeoBrutalismColor({}, 'primary.black');
+    const primaryRed = useNeoBrutalismColor({}, 'primary.red');
+    const primaryBlue = useNeoBrutalismColor({}, 'primary.blue');
+    const primaryGreen = useNeoBrutalismColor({}, 'primary.green');
+    const accentYellow = useNeoBrutalismColor({}, 'accent.neonYellow');
+    const accentPink = useNeoBrutalismColor({}, 'accent.neonPink');
 
     return (
         <ScrollView style={[styles.container, { backgroundColor }]}>
@@ -191,22 +197,22 @@ export function NeoBrutalismDemo() {
                 </NeoBrutalismText>
 
                 <View style={styles.colorGrid}>
-                    <View style={[styles.colorSwatch, { backgroundColor: NeoBrutalismColors.primary.black }]}>
+                    <View style={[styles.colorSwatch, { backgroundColor: primaryBlack }]}>
                         <NeoBrutalismText variant="caption" color="inverse">Black</NeoBrutalismText>
                     </View>
-                    <View style={[styles.colorSwatch, { backgroundColor: NeoBrutalismColors.primary.red }]}>
+                    <View style={[styles.colorSwatch, { backgroundColor: primaryRed }]}>
                         <NeoBrutalismText variant="caption" color="inverse">Red</NeoBrutalismText>
                     </View>
-                    <View style={[styles.colorSwatch, { backgroundColor: NeoBrutalismColors.primary.blue }]}>
+                    <View style={[styles.colorSwatch, { backgroundColor: primaryBlue }]}>
                         <NeoBrutalismText variant="caption" color="inverse">Blue</NeoBrutalismText>
                     </View>
-                    <View style={[styles.colorSwatch, { backgroundColor: NeoBrutalismColors.primary.green }]}>
+                    <View style={[styles.colorSwatch, { backgroundColor: primaryGreen }]}>
                         <NeoBrutalismText variant="caption" color="primary">Green</NeoBrutalismText>
                     </View>
-                    <View style={[styles.colorSwatch, { backgroundColor: NeoBrutalismColors.accent.neonYellow }]}>
+                    <View style={[styles.colorSwatch, { backgroundColor: accentYellow }]}>
                         <NeoBrutalismText variant="caption" color="primary">Yellow</NeoBrutalismText>
                     </View>
-                    <View style={[styles.colorSwatch, { backgroundColor: NeoBrutalismColors.accent.neonPink }]}>
+                    <View style={[styles.colorSwatch, { backgroundColor: accentPink }]}>
                         <NeoBrutalismText variant="caption" color="inverse">Pink</NeoBrutalismText>
                     </View>
                 </View>
@@ -255,11 +261,11 @@ export function NeoBrutalismDemo() {
                     Theme Mode: {themeMode}
                 </NeoBrutalismText>
                 <NeoBrutalismText variant="body" color="inverse" style={styles.statusText}>
-                    Neo-Brutalism Active: {isNeoBrutalism ? 'Yes' : 'No'}
+                    Current Theme: {isDark ? 'Dark' : 'Light'}
                 </NeoBrutalismText>
 
                 <NeoBrutalismText variant="caption" color="muted" style={styles.description}>
-                    Switch to Neo-Brutalism theme in the theme selector to see full effect
+                    Neo-Brutalism design style adapts to both light and dark themes
                 </NeoBrutalismText>
             </NeoBrutalismCard>
         </ScrollView>
@@ -318,7 +324,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 4,
         borderWidth: 2,
-        borderColor: NeoBrutalismColors.border.primary,
+        borderColor: '#424242', // Fixed color for demo purposes
     },
     featureItem: {
         marginBottom: NeoBrutalismSpacing.sm,

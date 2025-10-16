@@ -1,11 +1,11 @@
 import {
     NeoBrutalismBorderRadius,
     NeoBrutalismBorderWidth,
-    NeoBrutalismColors,
     NeoBrutalismShadows,
     NeoBrutalismSpacing,
     NeoBrutalismTypography
 } from '@/constants/neo-brutalism';
+import { useNeoBrutalismColor } from '@/hooks/use-neo-brutalism-color';
 import React from 'react';
 import { StyleProp, StyleSheet, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
 import { ThemedText } from '../themed-text';
@@ -34,43 +34,53 @@ export function NeoBrutalismButton({
     textStyle,
     fullWidth = false,
 }: NeoBrutalismButtonProps) {
+    // Get colors at component level
+    const primaryBlack = useNeoBrutalismColor({}, 'primary.black');
+    const primaryRed = useNeoBrutalismColor({}, 'primary.red');
+    const primaryGreen = useNeoBrutalismColor({}, 'primary.green');
+    const backgroundSecondary = useNeoBrutalismColor({}, 'background.secondary');
+    const accentYellow = useNeoBrutalismColor({}, 'accent.neonYellow');
+    const borderPrimary = useNeoBrutalismColor({}, 'border.primary');
+    const textPrimary = useNeoBrutalismColor({}, 'text.primary');
+    const textInverse = useNeoBrutalismColor({}, 'text.inverse');
+
     const getVariantStyles = () => {
         switch (variant) {
             case 'primary':
                 return {
-                    backgroundColor: NeoBrutalismColors.primary.black,
-                    borderColor: NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.inverse,
+                    backgroundColor: primaryBlack,
+                    borderColor: borderPrimary,
+                    textColor: textInverse,
                 };
             case 'secondary':
                 return {
-                    backgroundColor: NeoBrutalismColors.background.secondary,
-                    borderColor: NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.primary,
+                    backgroundColor: backgroundSecondary,
+                    borderColor: borderPrimary,
+                    textColor: textPrimary,
                 };
             case 'accent':
                 return {
-                    backgroundColor: NeoBrutalismColors.accent.neonYellow,
-                    borderColor: NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.primary,
+                    backgroundColor: accentYellow,
+                    borderColor: borderPrimary,
+                    textColor: textPrimary,
                 };
             case 'danger':
                 return {
-                    backgroundColor: NeoBrutalismColors.primary.red,
-                    borderColor: NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.inverse,
+                    backgroundColor: primaryRed,
+                    borderColor: borderPrimary,
+                    textColor: textInverse,
                 };
             case 'success':
                 return {
-                    backgroundColor: NeoBrutalismColors.primary.green,
-                    borderColor: NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.primary,
+                    backgroundColor: primaryGreen,
+                    borderColor: borderPrimary,
+                    textColor: textPrimary,
                 };
             default:
                 return {
-                    backgroundColor: NeoBrutalismColors.primary.black,
-                    borderColor: NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.inverse,
+                    backgroundColor: primaryBlack,
+                    borderColor: borderPrimary,
+                    textColor: textInverse,
                 };
         }
     };

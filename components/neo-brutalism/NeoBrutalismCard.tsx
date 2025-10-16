@@ -1,10 +1,10 @@
 import {
     NeoBrutalismBorderRadius,
     NeoBrutalismBorderWidth,
-    NeoBrutalismColors,
     NeoBrutalismShadows,
     NeoBrutalismSpacing
 } from '@/constants/neo-brutalism';
+import { useNeoBrutalismColor } from '@/hooks/use-neo-brutalism-color';
 import React from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
@@ -27,32 +27,40 @@ export function NeoBrutalismCard({
     shadow = true,
     border = true,
 }: NeoBrutalismCardProps) {
+    // Get colors at component level
+    const backgroundPrimary = useNeoBrutalismColor({}, 'background.primary');
+    const backgroundSecondary = useNeoBrutalismColor({}, 'background.secondary');
+    const primaryBlack = useNeoBrutalismColor({}, 'primary.black');
+    const accentYellow = useNeoBrutalismColor({}, 'accent.neonYellow');
+    const borderPrimary = useNeoBrutalismColor({}, 'border.primary');
+    const borderSecondary = useNeoBrutalismColor({}, 'border.secondary');
+
     const getVariantStyles = () => {
         switch (variant) {
             case 'default':
                 return {
-                    backgroundColor: NeoBrutalismColors.background.primary,
-                    borderColor: NeoBrutalismColors.border.primary,
+                    backgroundColor: backgroundPrimary,
+                    borderColor: borderPrimary,
                 };
             case 'accent':
                 return {
-                    backgroundColor: NeoBrutalismColors.accent.neonYellow,
-                    borderColor: NeoBrutalismColors.border.primary,
+                    backgroundColor: accentYellow,
+                    borderColor: borderPrimary,
                 };
             case 'dark':
                 return {
-                    backgroundColor: NeoBrutalismColors.primary.black,
-                    borderColor: NeoBrutalismColors.border.primary,
+                    backgroundColor: primaryBlack,
+                    borderColor: borderPrimary,
                 };
             case 'light':
                 return {
-                    backgroundColor: NeoBrutalismColors.background.secondary,
-                    borderColor: NeoBrutalismColors.border.secondary,
+                    backgroundColor: backgroundSecondary,
+                    borderColor: borderSecondary,
                 };
             default:
                 return {
-                    backgroundColor: NeoBrutalismColors.background.primary,
-                    borderColor: NeoBrutalismColors.border.primary,
+                    backgroundColor: backgroundPrimary,
+                    borderColor: borderPrimary,
                 };
         }
     };

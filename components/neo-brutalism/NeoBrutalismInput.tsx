@@ -1,11 +1,11 @@
 import {
     NeoBrutalismBorderRadius,
     NeoBrutalismBorderWidth,
-    NeoBrutalismColors,
     NeoBrutalismShadows,
     NeoBrutalismSpacing,
     NeoBrutalismTypography
 } from '@/constants/neo-brutalism';
+import { useNeoBrutalismColor } from '@/hooks/use-neo-brutalism-color';
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, TextStyle, View, ViewStyle } from 'react-native';
 import { NeoBrutalismText } from './NeoBrutalismText';
@@ -44,42 +44,55 @@ export function NeoBrutalismInput({
 }: NeoBrutalismInputProps) {
     const [isFocused, setIsFocused] = useState(false);
 
+    // Get colors at component level
+    const backgroundPrimary = useNeoBrutalismColor({}, 'background.primary');
+    const backgroundSecondary = useNeoBrutalismColor({}, 'background.secondary');
+    const primaryBlack = useNeoBrutalismColor({}, 'primary.black');
+    const accentYellow = useNeoBrutalismColor({}, 'accent.neonYellow');
+    const borderPrimary = useNeoBrutalismColor({}, 'border.primary');
+    const borderSecondary = useNeoBrutalismColor({}, 'border.secondary');
+    const borderAccent = useNeoBrutalismColor({}, 'border.accent');
+    const textPrimary = useNeoBrutalismColor({}, 'text.primary');
+    const textSecondary = useNeoBrutalismColor({}, 'text.secondary');
+    const textInverse = useNeoBrutalismColor({}, 'text.inverse');
+    const textMuted = useNeoBrutalismColor({}, 'text.muted');
+
     const getVariantStyles = () => {
         switch (variant) {
             case 'default':
                 return {
-                    backgroundColor: NeoBrutalismColors.background.primary,
-                    borderColor: isFocused ? NeoBrutalismColors.border.accent : NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.primary,
-                    placeholderColor: NeoBrutalismColors.text.muted,
+                    backgroundColor: backgroundPrimary,
+                    borderColor: isFocused ? borderAccent : borderPrimary,
+                    textColor: textPrimary,
+                    placeholderColor: textMuted,
                 };
             case 'accent':
                 return {
-                    backgroundColor: NeoBrutalismColors.accent.neonYellow,
-                    borderColor: isFocused ? NeoBrutalismColors.border.primary : NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.primary,
-                    placeholderColor: NeoBrutalismColors.text.secondary,
+                    backgroundColor: accentYellow,
+                    borderColor: isFocused ? borderPrimary : borderPrimary,
+                    textColor: textPrimary,
+                    placeholderColor: textSecondary,
                 };
             case 'dark':
                 return {
-                    backgroundColor: NeoBrutalismColors.primary.black,
-                    borderColor: isFocused ? NeoBrutalismColors.border.accent : NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.inverse,
-                    placeholderColor: NeoBrutalismColors.text.muted,
+                    backgroundColor: primaryBlack,
+                    borderColor: isFocused ? borderAccent : borderPrimary,
+                    textColor: textInverse,
+                    placeholderColor: textMuted,
                 };
             case 'light':
                 return {
-                    backgroundColor: NeoBrutalismColors.background.secondary,
-                    borderColor: isFocused ? NeoBrutalismColors.border.accent : NeoBrutalismColors.border.secondary,
-                    textColor: NeoBrutalismColors.text.primary,
-                    placeholderColor: NeoBrutalismColors.text.muted,
+                    backgroundColor: backgroundSecondary,
+                    borderColor: isFocused ? borderAccent : borderSecondary,
+                    textColor: textPrimary,
+                    placeholderColor: textMuted,
                 };
             default:
                 return {
-                    backgroundColor: NeoBrutalismColors.background.primary,
-                    borderColor: isFocused ? NeoBrutalismColors.border.accent : NeoBrutalismColors.border.primary,
-                    textColor: NeoBrutalismColors.text.primary,
-                    placeholderColor: NeoBrutalismColors.text.muted,
+                    backgroundColor: backgroundPrimary,
+                    borderColor: isFocused ? borderAccent : borderPrimary,
+                    textColor: textPrimary,
+                    placeholderColor: textMuted,
                 };
         }
     };
